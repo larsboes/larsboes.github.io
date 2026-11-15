@@ -1,0 +1,15 @@
+# Norsk (bokmål) → Deutsch
+#
+# Same fields as es.yaml; see the comment at the top of that file.
+# Add new entries at the end. `bun run check:data` validates this file.
+
+language: Norsk
+flag: 🇳🇴
+
+entries:
+  - term: Ble du født med ski på beina?
+    de: Bist du ein Naturtalent auf Skiern?
+    literal: Wurdest du mit Skiern an den Beinen geboren?
+    type: question
+    tags: [funny]
+    note: From the saying "Nordmenn er født med ski på beina", Norwegians are born with skis on their feet.

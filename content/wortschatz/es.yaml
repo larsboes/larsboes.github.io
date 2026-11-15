@@ -4,7 +4,7 @@
 #   term     (required) the Spanish word or phrase
 #   de       (required) what it means in German
 #   type     (required) word | phrase | question | sentence
-#   tags     (required) one or more of: common, funny, kind, rude, vulgar, thing — new tags are allowed
+#   tags     (required) one or more of: common, funny, kind, proverb, rude, vulgar, thing; new tags are allowed
 #   literal  (optional) word-for-word German, when it differs from the meaning
 #   note     (optional) when and how it is used
 #   example  (optional) { term: Spanish sentence, de: German sentence }
@@ -741,3 +741,16 @@ entries:
     literal: Das ist der Schwanz
     type: phrase
     tags: [vulgar, funny]
+
+  - term: El que se fue a Sevilla, perdió su silla
+    de: Aufgestanden, Platz vergangen
+    literal: Wer nach Sevilla ging, hat seinen Stuhl verloren
+    type: phrase
+    tags: [proverb]
+
+  - term: Cuando el río suena, agua lleva
+    de: Kein Rauch ohne Feuer
+    literal: Wenn der Fluss rauscht, führt er Wasser
+    type: phrase
+    tags: [proverb]
+    note: Every rumour has some truth in it.
