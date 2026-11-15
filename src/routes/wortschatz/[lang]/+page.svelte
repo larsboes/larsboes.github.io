@@ -54,12 +54,18 @@
 </script>
 
 <svelte:head>
-	<title>{deck.language} → Deutsch · Wortschatz</title>
+	<title>{deck.language} → {deck.target} · Wortschatz</title>
 </svelte:head>
 
 <main>
 	<a class="back muted" href={resolve('/wortschatz')}>← Wortschatz</a>
-	<h1>{deck.flag} {deck.language} <span class="muted">→ Deutsch</span></h1>
+	<h1>{deck.flag} {deck.language} <span class="muted">→ {deck.target}</span></h1>
+	{#if deck.links.length}
+		<p class="sources muted">
+			Mehr:
+			{#each deck.links as l, i (l.url)}{#if i}, {/if}<a href={l.url} rel="noopener">{l.label}</a>{/each}
+		</p>
+	{/if}
 
 	<div class="mode" role="tablist">
 		<button role="tab" aria-selected={mode === 'list'} onclick={() => (mode = 'list')}>Liste</button>
@@ -88,7 +94,7 @@
 	</div>
 
 	{#if mode === 'practice' && progress}
-		<Practice entries={filtered} {progress} language={deck.language} />
+		<Practice entries={filtered} {progress} language={deck.language} target={deck.target} />
 	{:else}
 		<p class="count muted">{filtered.length} von {deck.entries.length}</p>
 		<ul class="entries">
@@ -124,6 +130,10 @@
 	}
 	h1 {
 		margin-top: 0.75rem;
+	}
+	.sources {
+		margin: 0;
+		font-size: 0.9rem;
 	}
 	h1 .muted {
 		font-weight: 400;

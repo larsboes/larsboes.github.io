@@ -16,7 +16,7 @@
 			<li>
 				<a href={resolve('/wortschatz/[lang]', { lang: deck.code })}>
 					<span class="flag">{deck.flag}</span>
-					<span class="name">{deck.language} → Deutsch</span>
+					<span class="name">{deck.language} → {deck.target}</span>
 					<span class="muted">{deck.count}</span>
 				</a>
 			</li>

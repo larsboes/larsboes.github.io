@@ -21,5 +21,9 @@ export interface Deck {
 	code: string;
 	language: string;
 	flag: string;
+	/** What `de` holds: "Deutsch" by default, e.g. "Hochdeutsch" for a dialect. */
+	target: string;
+	/** Sites with more, shown on the deck page. */
+	links: { label: string; url: string }[];
 	entries: Entry[];
 }

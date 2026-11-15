@@ -1,0 +1,39 @@
+# Österreichisch → Hochdeutsch
+#
+# Same fields as es.yaml; see the comment at the top of that file.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
+
+language: Österreichisch
+flag: 🇦🇹
+target: Hochdeutsch
+links:
+  - label: ostarrichi.org, Österreichisches Wörterbuch
+    url: https://www.ostarrichi.org/
+
+entries:
+
+  # ── Priority 1
+
+  - term: Oida
+    de: Alter
+    type: word
+    tags: [common]
+    priority: 1
+    note: Anrede und Ausruf für alles, von Überraschung bis Ärger.
+
+  - term: Ur
+    de: Sehr / total
+    type: word
+    tags: [common]
+    priority: 1
+    note: Steht vor dem Adjektiv.
+    example:
+      term: Des is ur zach.
+      de: Das ist total mühsam.
+
+  - term: Zach
+    de: Mühsam / anstrengend
+    literal: Zäh
+    type: word
+    tags: [common]
+    priority: 1

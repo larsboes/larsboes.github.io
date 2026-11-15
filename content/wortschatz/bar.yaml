@@ -1,0 +1,90 @@
+# Bairisch → Hochdeutsch
+#
+# Same fields as es.yaml; see the comment at the top of that file.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
+
+language: Bairisch
+flag: 🥨
+target: Hochdeutsch
+links:
+  - label: deutsch-bairisch.de, Bayrisch für Anfänger
+    url: https://deutsch-bairisch.de/bayrisch-fuer-anfaenger/
+
+entries:
+
+  # ── Priority 1
+
+  - term: Woas i ned
+    de: Weiß ich nicht
+    type: phrase
+    tags: [common]
+    priority: 1
+
+  - term: Ja mei
+    de: Tja, so ist es halt
+    type: phrase
+    tags: [common]
+    priority: 1
+    note: Desinteresse oder Erstaunen, je nach Betonung.
+
+  - term: An Guadn!
+    de: Guten Appetit!
+    type: phrase
+    tags: [common]
+    priority: 1
+
+  - term: Bassd scho
+    de: Passt schon
+    type: phrase
+    tags: [common, funny]
+    priority: 1
+    note: Auch ironisch, bis hin zu „Leck mich am Arsch".
+
+  - term: Mia wurscht!
+    de: Das ist mir egal!
+    literal: Mir Wurst!
+    type: phrase
+    tags: [common]
+    priority: 1
+
+  - term: Do legst di nieda!
+    de: Nicht zu glauben!
+    literal: Da legst du dich nieder!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  # ── Priority 2
+
+  - term: Hock di her da!
+    de: Setz dich doch zu uns!
+    type: phrase
+    tags: [kind]
+    priority: 2
+
+  - term: Wos mägst?
+    de: Wie bitte?
+    literal: Was magst du?
+    type: question
+    tags: [common]
+    priority: 2
+
+  - term: Host mi?
+    de: Verstehst du, was ich meine?
+    literal: Hast du mich?
+    type: question
+    tags: [common]
+    priority: 2
+
+  - term: Sei ma ned bäs
+    de: Sei mir nicht böse
+    type: phrase
+    tags: [kind]
+    priority: 2
+
+  - term: I moan scho aa!
+    de: Das sehe ich auch so!
+    literal: Ich mein schon auch!
+    type: phrase
+    tags: [common]
+    priority: 2

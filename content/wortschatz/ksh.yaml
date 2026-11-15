@@ -1,0 +1,86 @@
+# Kölsch → Hochdeutsch
+#
+# Same fields as es.yaml; see the comment at the top of that file.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
+
+language: Kölsch
+flag: 🎭
+target: Hochdeutsch
+links:
+  - label: Das Rheinische Grundgesetz (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Das_Rheinische_Grundgesetz
+
+entries:
+
+  # ── Priority 1
+
+  - term: Et es wie et es.
+    de: Es ist, wie es ist.
+    type: sentence
+    tags: [proverb]
+    priority: 1
+    note: Artikel 1 des Rheinischen Grundgesetzes.
+
+  - term: Et kütt wie et kütt.
+    de: Es kommt, wie es kommt.
+    type: sentence
+    tags: [proverb]
+    priority: 1
+    note: Artikel 2. Rheinischer Fatalismus pur.
+
+  - term: Et hätt noch immer jot jejange.
+    de: Es ist noch immer gut gegangen.
+    type: sentence
+    tags: [proverb, funny]
+    priority: 1
+    note: Artikel 3. Die Antwort auf jede Projektplanung.
+
+  - term: Drinkste ene met?
+    de: Trinkst du einen mit?
+    type: question
+    tags: [common]
+    priority: 1
+    note: Artikel 10. Keine Frage, sondern eine Einladung.
+
+  - term: Jede Jeck es anders.
+    de: Jeder ist auf seine Art verrückt.
+    literal: Jeder Narr ist anders.
+    type: sentence
+    tags: [proverb, funny]
+    priority: 1
+    note: Spätere Ergänzung zum Grundgesetz.
+
+  # ── Priority 2
+
+  - term: Wat fott es, es fott.
+    de: Was weg ist, ist weg.
+    type: sentence
+    tags: [proverb]
+    priority: 2
+    note: Artikel 4.
+
+  - term: Mer muss och jönne könne.
+    de: Man muss es anderen auch gönnen können.
+    type: sentence
+    tags: [proverb, kind]
+    priority: 2
+
+  - term: Halver Hahn
+    de: Roggenbrötchen mit Käse
+    literal: Halbes Hähnchen
+    type: word
+    tags: [thing, funny]
+    priority: 2
+    note: Hat mit Hähnchen nichts zu tun. Touristen fallen zuverlässig darauf rein.
+
+  - term: Klüngel
+    de: Dinge regeln über „ich kenn da einen"
+    type: word
+    tags: [common]
+    priority: 2
+
+  - term: Fisternöllchen
+    de: Heimliche Affäre
+    type: word
+    tags: [funny]
+    priority: 2

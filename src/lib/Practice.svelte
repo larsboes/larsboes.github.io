@@ -6,8 +6,9 @@
 	let {
 		entries,
 		progress,
-		language
-	}: { entries: Entry[]; progress: Progress; language: string } = $props();
+		language,
+		target
+	}: { entries: Entry[]; progress: Progress; language: string; target: string } = $props();
 
 	let reverse = $state(false);
 	let revealed = $state(false);
@@ -60,7 +61,7 @@
 
 <div class="bar">
 	<button class="link" onclick={() => ((reverse = !reverse), (revealed = false))}>
-		{reverse ? `Deutsch → ${language}` : `${language} → Deutsch`} ⇄
+		{reverse ? `${target} → ${language}` : `${language} → ${target}`} ⇄
 	</button>
 	<span class="muted">{solid} sitzen · {seen - solid} in Arbeit · {entries.length - seen} neu</span>
 </div>

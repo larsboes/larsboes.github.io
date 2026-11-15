@@ -1,0 +1,126 @@
+# Deutsche Redewendungen → Bedeutung
+#
+# Same fields as es.yaml; see the comment at the top of that file.
+# Here `de` holds what the idiom means, in plain German.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
+
+language: Redewendungen
+flag: 🇩🇪
+target: Bedeutung
+
+entries:
+
+  # ── Priority 1: what native speakers say all the time
+
+  - term: Passt schon.
+    de: Alles von „super" bis „ich bin enttäuscht, sag's aber nicht"
+    type: phrase
+    tags: [common]
+    priority: 1
+
+  - term: Läuft bei dir.
+    de: Du hast es drauf.
+    type: phrase
+    tags: [common, funny]
+    priority: 1
+    note: Ernst gemeint oder ironisch, je nach Tonfall.
+
+  - term: Ich hab Rücken.
+    de: Ich habe Rückenschmerzen.
+    type: phrase
+    tags: [funny]
+    priority: 1
+    note: Eine vollwertige Krankheitsbeschreibung.
+
+  - term: Mahlzeit!
+    de: Gruß rund um die Mittagszeit
+    type: word
+    tags: [common]
+    priority: 1
+    note: Hört man um 11 Uhr genauso wie um 15 Uhr.
+
+  - term: Ich glaub, mein Schwein pfeift!
+    de: Das gibt's doch nicht!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Ich verstehe nur Bahnhof.
+    de: Ich verstehe gar nichts.
+    type: phrase
+    tags: [funny, common]
+    priority: 1
+
+  - term: Das ist nicht mein Bier.
+    de: Das ist nicht meine Angelegenheit.
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Da steppt der Bär.
+    de: Da ist richtig was los.
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Der hat nicht alle Latten am Zaun. / Der hat einen Sprung in der Schüssel.
+    de: Der ist nicht ganz bei Trost.
+    type: phrase
+    tags: [funny, rude]
+    priority: 1
+
+  - term: Alter Schwede!
+    de: Wow! / Donnerwetter!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  # ── Priority 2: absurd if you think about it
+
+  - term: Jetzt geht's um die Wurst.
+    de: Jetzt kommt es darauf an.
+    type: phrase
+    tags: [funny]
+    priority: 2
+
+  - term: Alles hat ein Ende, nur die Wurst hat zwei.
+    de: Alles geht einmal vorbei.
+    type: sentence
+    tags: [funny, proverb]
+    priority: 2
+
+  - term: Hier sieht's aus wie bei Hempels unterm Sofa.
+    de: Hier ist es total unordentlich.
+    type: sentence
+    tags: [funny]
+    priority: 2
+
+  - term: Da beißt die Maus keinen Faden ab.
+    de: Daran ist nichts zu ändern.
+    type: phrase
+    tags: [funny]
+    priority: 2
+
+  - term: Klappe zu, Affe tot.
+    de: Fertig, Thema erledigt.
+    type: phrase
+    tags: [funny]
+    priority: 2
+
+  - term: Ach du grüne Neune!
+    de: Ach du meine Güte!
+    type: phrase
+    tags: [funny]
+    priority: 2
+
+  - term: Mit dem ist nicht gut Kirschen essen.
+    de: Mit dem legt man sich besser nicht an.
+    type: phrase
+    tags: [funny]
+    priority: 2
+
+  - term: Pustekuchen!
+    de: Denkste! / Daraus wird nichts.
+    type: word
+    tags: [funny]
+    priority: 2

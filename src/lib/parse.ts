@@ -51,11 +51,17 @@ export function parseDeck(code: string, text: string): Deck {
 		entries.push({ ...(e as unknown as Omit<Entry, 'id'>), id });
 	});
 
+	const links = (raw.links ?? []) as { label?: unknown; url?: unknown }[];
+	if (!Array.isArray(links) || !links.every((l) => str(l?.label) && str(l?.url) && /^https:\/\//.test(l.url as string)))
+		errors.push(`${code}.yaml: "links" must be a list of { label, url } with https URLs`);
+
 	if (errors.length) throw new Error(errors.join('\n'));
 	return {
 		code,
 		language: raw.language as string,
 		flag: str(raw.flag) ? raw.flag : '',
+		target: str(raw.target) ? raw.target : 'Deutsch',
+		links: links as Deck['links'],
 		// Stable sort: priority first, file order within a priority.
 		entries: entries.sort((a, b) => a.priority - b.priority)
 	};
