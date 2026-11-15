@@ -2,13 +2,15 @@
 	import { untrack } from 'svelte';
 	import type { Entry } from './wortschatz.ts';
 	import { MAX_BOX, type Progress } from './progress.svelte.ts';
+	import Speak from './Speak.svelte';
 
 	let {
 		entries,
 		progress,
 		language,
-		target
-	}: { entries: Entry[]; progress: Progress; language: string; target: string } = $props();
+		target,
+		speech
+	}: { entries: Entry[]; progress: Progress; language: string; target: string; speech?: string } = $props();
 
 	let reverse = $state(false);
 	let revealed = $state(false);
@@ -68,9 +70,15 @@
 
 {#if current}
 	<div class="card">
-		<div class="front">{reverse ? current.de : current.term}</div>
+		<div class="front">
+			{reverse ? current.de : current.term}
+			{#if speech && !reverse}<Speak text={current.term} lang={speech} />{/if}
+		</div>
 		{#if revealed}
-			<div class="back">{reverse ? current.term : current.de}</div>
+			<div class="back">
+				{reverse ? current.term : current.de}
+				{#if speech && reverse}<Speak text={current.term} lang={speech} />{/if}
+			</div>
 			{#if current.literal}<div class="muted">wörtlich: {current.literal}</div>{/if}
 			{#if current.note}<div class="muted note">{current.note}</div>{/if}
 		{/if}

@@ -4,6 +4,8 @@
 	import { Progress, MAX_BOX } from '#lib/progress.svelte.ts';
 	import Practice from '#lib/Practice.svelte';
 	import GitHub from '#lib/icons/GitHub.svelte';
+	import Speak from '#lib/Speak.svelte';
+	import { matches } from '#lib/search.ts';
 	import { REPO } from '#lib/site.ts';
 
 	let { data } = $props();
@@ -32,22 +34,13 @@
 	const allTags = $derived([...new Set(deck.entries.flatMap((e) => e.tags))].sort());
 	const usedTypes = $derived(TYPES.filter((t) => deck.entries.some((e) => e.type === t)));
 
-	const fold = (s: string) =>
-		s
-			.normalize('NFD')
-			.replace(/\p{M}/gu, '')
-			.toLowerCase();
-	const haystack = (e: Entry) =>
-		fold([e.term, e.de, e.literal, e.note, e.example?.term, e.example?.de].join(' '));
-
 	const filtered = $derived.by(() => {
-		const q = fold(query.trim());
 		return deck.entries.filter(
 			(e) =>
 				(!priority || e.priority === priority) &&
 				(!type || e.type === type) &&
 				(!tags.length || e.tags.some((t) => tags.includes(t))) &&
-				(!q || haystack(e).includes(q))
+				matches(e, query)
 		);
 	});
 
@@ -96,14 +89,14 @@
 	</div>
 
 	{#if mode === 'practice' && progress}
-		<Practice entries={filtered} {progress} language={deck.language} target={deck.target} />
+		<Practice entries={filtered} {progress} language={deck.language} target={deck.target} speech={deck.speech} />
 	{:else}
 		<p class="count muted">{filtered.length} von {deck.entries.length}</p>
 		<ul class="entries">
 			{#each filtered as e (e.id)}
 				<li>
 					<div class="head">
-						<span class="term">{e.term}</span>
+						<span class="term">{e.term}{#if deck.speech}<Speak text={e.term} lang={deck.speech} />{/if}</span>
 						{#if progress && progress.box(e.id) > 0}
 							<span class="level" title="Fortschritt {progress.box(e.id)} von {MAX_BOX}">
 								{'●'.repeat(progress.box(e.id))}{'○'.repeat(MAX_BOX - progress.box(e.id))}

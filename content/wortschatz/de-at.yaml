@@ -6,6 +6,7 @@
 language: Österreichisch
 flag: 🇦🇹
 target: Hochdeutsch
+speech: de-AT
 links:
   - label: ostarrichi.org, Österreichisches Wörterbuch
     url: https://www.ostarrichi.org/
@@ -43,3 +44,139 @@ entries:
     type: word
     tags: [common]
     priority: 1
+
+  - term: Leiwand
+    de: Toll / super
+    type: word
+    tags: [common]
+    priority: 1
+
+  - term: Heast!
+    de: Hey! / Hör mal!
+    literal: Hörst du!
+    type: word
+    tags: [common]
+    priority: 1
+
+  - term: Geh bitte! / Na geh!
+    de: Ach komm!
+    type: phrase
+    tags: [common]
+    priority: 1
+
+  - term: Eh
+    de: Sowieso
+    type: word
+    tags: [common]
+    priority: 1
+    example:
+      term: Passt eh.
+      de: Passt sowieso.
+
+  - term: Gemma!
+    de: Gehen wir!
+    type: word
+    tags: [common]
+    priority: 1
+
+  - term: Baba! / Servus!
+    de: Tschüss! / Hallo!
+    type: word
+    tags: [common]
+    priority: 1
+    note: Servus geht für Hallo und Tschüss, Baba nur zum Abschied.
+
+  - term: Bist du deppert!
+    de: Bist du verrückt!
+    type: phrase
+    tags: [funny, rude]
+    priority: 1
+
+  - term: Grantig
+    de: Schlecht gelaunt
+    type: word
+    tags: [common]
+    priority: 1
+
+  - term: Sudern
+    de: Jammern
+    type: word
+    tags: [common]
+    priority: 1
+
+  - term: Schmäh
+    de: Witz, Charme
+    type: word
+    tags: [common, funny]
+    priority: 1
+    example:
+      term: Der hat an Schmäh.
+      de: Der ist witzig und charmant.
+
+  # ── Priority 2
+
+  - term: Hawara
+    de: Kumpel
+    type: word
+    tags: [common]
+    priority: 2
+
+  - term: Gspusi
+    de: Liebschaft
+    type: word
+    tags: [funny]
+    priority: 2
+
+  - term: Beisl
+    de: Kneipe
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Jause
+    de: Brotzeit / Zwischenmahlzeit
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Gspritzter
+    de: Weinschorle
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Sackerl
+    de: Tüte
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Paradeiser
+    de: Tomate
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Erdäpfel
+    de: Kartoffeln
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Marille
+    de: Aprikose
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Schlagobers
+    de: Schlagsahne
+    type: word
+    tags: [thing]
+    priority: 2
+
+  - term: Topfen
+    de: Quark
+    type: word
+    tags: [thing]
+    priority: 2

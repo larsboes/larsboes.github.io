@@ -61,6 +61,7 @@ export function parseDeck(code: string, text: string): Deck {
 		language: raw.language as string,
 		flag: str(raw.flag) ? raw.flag : '',
 		target: str(raw.target) ? raw.target : 'Deutsch',
+		speech: str(raw.speech) ? raw.speech : undefined,
 		links: links as Deck['links'],
 		// Stable sort: priority first, file order within a priority.
 		entries: entries.sort((a, b) => a.priority - b.priority)

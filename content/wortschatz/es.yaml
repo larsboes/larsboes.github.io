@@ -10,10 +10,14 @@
 #   note     (optional) when and how it is used
 #   example  (optional) { term: Spanish sentence, de: German sentence }
 #
+# Deck fields: language, flag, target (default Deutsch), links, and speech: the
+# browser voice language (BCP 47, e.g. es-ES). Without speech there is no speaker button.
+#
 # Add a new entry at the end of its priority section. `bun run check:data` validates this file.
 
 language: Español
 flag: 🇪🇸
+speech: es-ES
 
 entries:
 

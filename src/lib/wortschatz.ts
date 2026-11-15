@@ -23,6 +23,8 @@ export interface Deck {
 	flag: string;
 	/** What `de` holds: "Deutsch" by default, e.g. "Hochdeutsch" for a dialect. */
 	target: string;
+	/** Browser voice language (BCP 47), e.g. "es-ES". No speaker button when absent. */
+	speech?: string;
 	/** Sites with more, shown on the deck page. */
 	links: { label: string; url: string }[];
 	entries: Entry[];
