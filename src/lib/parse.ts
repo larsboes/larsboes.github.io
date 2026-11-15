@@ -1,5 +1,5 @@
 import { parse } from 'yaml';
-import { TYPES, type Deck, type Entry, type EntryType } from './wortschatz.ts';
+import { PRIORITIES, TYPES, type Deck, type Entry, type EntryType, type Priority } from './wortschatz.ts';
 
 /** Stable id from the term, so practice progress survives reordering the file. */
 export function entryId(term: string): string {
@@ -34,12 +34,14 @@ export function parseDeck(code: string, text: string): Deck {
 			at(i, `"type" must be one of ${TYPES.join(', ')} (${e.term ?? '?'})`);
 		if (!Array.isArray(e.tags) || e.tags.length === 0 || !e.tags.every(str))
 			at(i, `"tags" must be a non-empty list (${e.term ?? '?'})`);
+		if (!PRIORITIES.includes(e.priority as Priority))
+			at(i, `"priority" must be 1, 2 or 3 (${e.term ?? '?'})`);
 		for (const k of ['literal', 'note'] as const)
 			if (e[k] !== undefined && !str(e[k])) at(i, `"${k}" must be text`);
 		const ex = e.example as Record<string, unknown> | undefined;
 		if (ex !== undefined && !(str(ex?.term) && str(ex?.de)))
 			at(i, '"example" needs "term" and "de"');
-		const known = ['term', 'de', 'type', 'tags', 'literal', 'note', 'example'];
+		const known = ['term', 'de', 'type', 'tags', 'priority', 'literal', 'note', 'example'];
 		for (const k of Object.keys(e)) if (!known.includes(k)) at(i, `unknown field "${k}"`);
 
 		if (!str(e.term)) return;
@@ -54,6 +56,7 @@ export function parseDeck(code: string, text: string): Deck {
 		code,
 		language: raw.language as string,
 		flag: str(raw.flag) ? raw.flag : '',
-		entries
+		// Stable sort: priority first, file order within a priority.
+		entries: entries.sort((a, b) => a.priority - b.priority)
 	};
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { TYPES, type Entry } from '#lib/wortschatz.ts';
+	import { PRIORITIES, TYPES, type Entry } from '#lib/wortschatz.ts';
 	import { Progress, MAX_BOX } from '#lib/progress.svelte.ts';
 	import Practice from '#lib/Practice.svelte';
 
@@ -14,7 +14,10 @@
 		sentence: 'Satz'
 	};
 
+	const PRIORITY_LABEL: Record<number, string> = { 1: 'Top', 2: 'Umgangssprache', 3: 'Basis' };
+
 	let query = $state('');
+	let priority = $state<number | null>(null);
 	let type = $state<string | null>(null);
 	let tags = $state<string[]>([]);
 	let mode = $state<'list' | 'practice'>('list');
@@ -39,6 +42,7 @@
 		const q = fold(query.trim());
 		return deck.entries.filter(
 			(e) =>
+				(!priority || e.priority === priority) &&
 				(!type || e.type === type) &&
 				(!tags.length || e.tags.some((t) => tags.includes(t))) &&
 				(!q || haystack(e).includes(q))
@@ -65,6 +69,12 @@
 	<div class="filters">
 		<input type="search" placeholder="Suchen…" bind:value={query} aria-label="Suchen" />
 		<div class="chips">
+			{#each PRIORITIES as p (p)}
+				<button class="chip" aria-pressed={priority === p} onclick={() => (priority = priority === p ? null : p)}>
+					{PRIORITY_LABEL[p]}
+				</button>
+			{/each}
+			<span class="sep"></span>
 			{#each usedTypes as t (t)}
 				<button class="chip" aria-pressed={type === t} onclick={() => (type = type === t ? null : t)}>
 					{TYPE_LABEL[t]}
@@ -99,7 +109,7 @@
 						<div class="example"><i>{e.example.term}</i> — {e.example.de}</div>
 					{/if}
 					<div class="meta muted">
-						{TYPE_LABEL[e.type]} · {e.tags.map((t) => `#${t}`).join(' ')}
+						{PRIORITY_LABEL[e.priority]} · {TYPE_LABEL[e.type]} · {e.tags.map((t) => `#${t}`).join(' ')}
 					</div>
 				</li>
 			{/each}

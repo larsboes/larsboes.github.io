@@ -1,7 +1,7 @@
 # Norsk (bokmål) → Deutsch
 #
 # Same fields as es.yaml; see the comment at the top of that file.
-# Add new entries at the end. `bun run check:data` validates this file.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
 
 language: Norsk
 flag: 🇳🇴
@@ -12,4 +12,5 @@ entries:
     literal: Wurdest du mit Skiern an den Beinen geboren?
     type: question
     tags: [funny]
+    priority: 1
     note: From the saying "Nordmenn er født med ski på beina", Norwegians are born with skis on their feet.

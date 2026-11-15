@@ -14,13 +14,19 @@
 	let current = $state<Entry | undefined>();
 	let last: string | undefined;
 
-	/** Next card: one of the entries in the lowest box, never the same card twice in a row. */
+	/**
+	 * Lower score comes first. Each priority step counts as two boxes, so a new priority-2 card
+	 * comes up once the priority-1 cards have been known twice.
+	 */
+	const score = (e: Entry) => progress.box(e.id) + (e.priority - 1) * 2;
+
+	/** Next card: one of the lowest-scoring entries, never the same card twice in a row. */
 	function next() {
 		revealed = false;
 		const pool = entries.length > 1 ? entries.filter((e) => e.id !== last) : entries;
 		if (!pool.length) return (current = undefined);
-		const low = Math.min(...pool.map((e) => progress.box(e.id)));
-		const candidates = pool.filter((e) => progress.box(e.id) === low);
+		const low = Math.min(...pool.map(score));
+		const candidates = pool.filter((e) => score(e) === low);
 		current = candidates[Math.floor(Math.random() * candidates.length)];
 		last = current.id;
 	}

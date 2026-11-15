@@ -5,26 +5,26 @@
 #   de       (required) what it means in German
 #   type     (required) word | phrase | question | sentence
 #   tags     (required) one or more of: common, funny, kind, proverb, rude, vulgar, thing; new tags are allowed
+#   priority (required) 1 = learn first (funny, vulgar, proverbs), 2 = slang and fillers, 3 = basics
 #   literal  (optional) word-for-word German, when it differs from the meaning
 #   note     (optional) when and how it is used
 #   example  (optional) { term: Spanish sentence, de: German sentence }
 #
-# Add new entries at the end. `bun run check:data` validates this file.
+# Add a new entry at the end of its priority section. `bun run check:data` validates this file.
 
 language: Español
 flag: 🇪🇸
 
 entries:
-  - term: Eso es muy bonito, ¡yo también me alegro por ti! / Muy amable, ¡yo también!
-    de: Das ist sehr nett, ich freue mich auch für dich!
-    type: phrase
-    tags: [kind]
+
+  # ── Priority 1: funny, vulgar, proverbs. The things no course teaches
 
   - term: Eres más lento que el caballo del malo
     de: Du bist superlangsam
     literal: Du bist langsamer als das Pferd des Bösewichts
     type: phrase
     tags: [funny]
+    priority: 1
     note: The villain's horse is always the slower one in films.
 
   - term: Con paciencia y saliva, el elefante se la metió a la hormiga
@@ -32,48 +32,49 @@ entries:
     literal: Mit Geduld und Spucke hat der Elefant es der Ameise reingesteckt
     type: phrase
     tags: [funny, vulgar]
+    priority: 1
     note: Be patient and take it slowly.
 
   - term: Me estoy meando
     de: Ich muss pinkeln
     type: phrase
     tags: [funny, common]
+    priority: 1
 
   - term: Estás más estresado que el fontanero del Titanic
     de: Du bist total gestresst
     literal: Du bist gestresster als der Klempner auf der Titanic
     type: phrase
     tags: [funny]
-
-  - term: Bocadillo
-    de: Belegtes Baguette
-    type: word
-    tags: [thing]
-    note: Like Subway, but better.
+    priority: 1
 
   - term: ¡Hostia!
     de: Verdammt! / Scheiße!
     literal: Hostie
     type: word
     tags: [vulgar]
+    priority: 1
     note: Also means a slap ("una hostia").
 
   - term: Mierda
     de: Scheiße
     type: word
     tags: [funny]
+    priority: 1
 
   - term: ¡Joder!
     de: Verdammt! / Scheiße!
     literal: ficken
     type: word
     tags: [funny]
+    priority: 1
 
   - term: Me cago en la puta
     de: Verdammte Scheiße!
     literal: Ich scheiß auf die Hure
     type: phrase
     tags: [vulgar]
+    priority: 1
     note: Extreme anger or frustration.
 
   - term: Me cago en la leche
@@ -81,6 +82,7 @@ entries:
     literal: Ich scheiß auf die Milch
     type: phrase
     tags: [funny]
+    priority: 1
     note: Also from surprise.
 
   - term: Me cago en la hostia
@@ -88,6 +90,7 @@ entries:
     literal: Ich scheiß auf die Hostie
     type: phrase
     tags: [vulgar]
+    priority: 1
     note: Venting strong frustration or anger.
 
   - term: ¡Coño!
@@ -95,113 +98,220 @@ entries:
     literal: Fotze
     type: word
     tags: [vulgar, common]
+    priority: 1
     note: Like hostia or joder — surprise, annoyance, emphasis.
 
-  - term: ¿Qué pasa?
-    de: Was geht? / Was ist los?
-    type: question
-    tags: [common]
-    note: The most casual greeting.
+  - term: ¡Ni de coña!
+    de: Auf gar keinen Fall!
+    type: phrase
+    tags: [vulgar]
+    priority: 1
+    note: Stronger than "no way".
+
+  - term: ¡Qué cachondo/a (eres)!
+    de: Du bist (so) ein Witzbold!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: ¡Eso es la leche!
+    de: Das ist der Hammer!
+    type: phrase
+    tags: [funny]
+    priority: 1
+    note: Amazement or excitement — very Spanish.
+
+  - term: ¡Cállate la boca!
+    de: Halt den Mund! / Halt die Fresse!
+    type: phrase
+    tags: [vulgar]
+    priority: 1
+
+  - term: Me la trae floja
+    de: Das ist mir Wurst
+    type: phrase
+    tags: [funny, vulgar]
+    priority: 1
+    note: A crude, funny way to say you don't care.
+
+  - term: Qué tiempo más de mierda hace hoy
+    de: Das Wetter ist heute scheiße
+    type: sentence
+    tags: [rude]
+    priority: 1
+
+  - term: ¡Qué chorrada!
+    de: Was für ein Quatsch!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: ¡Qué pasada!
+    de: Das ist der Wahnsinn!
+    type: phrase
+    tags: [funny]
+    priority: 1
+    note: Always positive.
+
+  - term: No me entero de nada
+    de: Ich verstehe nur Bahnhof
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: ¡Qué fuerte!
+    de: Krass! / Heftig!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Ya era hora
+    de: Wurde auch Zeit!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Estoy de resaca
+    de: Ich hab einen Kater
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: ¡Qué marcha!
+    de: Was für eine Party!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Me piro
+    de: Ich hau ab
+    type: phrase
+    tags: [rude]
+    priority: 1
+
+  - term: ¡Qué planazo!
+    de: Was für ein geiler Plan!
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: Llueve a cántaros
+    de: Es regnet wie aus Eimern
+    literal: Es regnet in Krügen
+    type: phrase
+    tags: [funny]
+    priority: 1
+
+  - term: ¡Qué pesado!
+    de: So nervig!
+    type: phrase
+    tags: [rude]
+    priority: 1
+    note: For an annoying person or thing.
+
+  - term: ¡Es la polla!
+    de: Das ist der Hammer! / Das ist geil!
+    literal: Das ist der Schwanz
+    type: phrase
+    tags: [vulgar, funny]
+    priority: 1
+
+  - term: El que se fue a Sevilla, perdió su silla
+    de: Aufgestanden, Platz vergangen
+    literal: Wer nach Sevilla ging, hat seinen Stuhl verloren
+    type: phrase
+    tags: [proverb]
+    priority: 1
+
+  - term: Cuando el río suena, agua lleva
+    de: Kein Rauch ohne Feuer
+    literal: Wenn der Fluss rauscht, führt er Wasser
+    type: phrase
+    tags: [proverb]
+    priority: 1
+    note: Every rumour has some truth in it.
+
+  - term: Camarón que se duerme, se lo lleva la corriente
+    de: Wer schläft, verliert
+    literal: Die Garnele, die einschläft, nimmt die Strömung mit
+    type: phrase
+    tags: [proverb]
+    priority: 1
+    note: Stay alert or you miss your chance.
+
+  # ── Priority 2: slang and the filler words locals use all the time
+
+  - term: Eso es muy bonito, ¡yo también me alegro por ti! / Muy amable, ¡yo también!
+    de: Das ist sehr nett, ich freue mich auch für dich!
+    type: phrase
+    tags: [kind]
+    priority: 2
+
+  - term: Bocadillo
+    de: Belegtes Baguette
+    type: word
+    tags: [thing]
+    priority: 2
+    note: Like Subway, but better.
 
   - term: ¿Qué tal todo? / ¿Cómo va todo?
     de: Wie läuft alles so?
     type: question
     tags: [common]
+    priority: 2
     note: Conversation starter.
 
   - term: ¿Qué cuentas?
     de: Was gibt's Neues? / Was erzählst du?
     type: question
     tags: [common]
+    priority: 2
     note: Casual conversation starter.
-
-  - term: Totalmente
-    de: Total / Absolut
-    type: word
-    tags: [common]
-    note: An emphatic "sí".
 
   - term: Vale
     de: Okay / In Ordnung / Alles klar
     type: word
     tags: [common]
+    priority: 2
     note: THE most important Spanish word. Vale, vamos, Carmen.
-
-  - term: Claro / Claro que sí
-    de: Klar / Na klar / Natürlich
-    type: word
-    tags: [common]
-    note: The basic way to agree.
-
-  - term: Desde luego
-    de: Allerdings / Selbstverständlich
-    type: word
-    tags: [common]
-    note: Strong agreement, slightly formal.
 
   - term: Ya ves / Ya te digo
     de: Sag ich ja / Kenn ich / Eben!
     type: phrase
     tags: [common]
+    priority: 2
     note: Like "exactly!" or "told you so!".
 
   - term: Qué va / Para nada
     de: Quatsch! / Auf keinen Fall / Gar nicht
     type: phrase
     tags: [common]
+    priority: 2
     note: Casual, strong disagreement.
-
-  - term: Pues no sé
-    de: Tja, ich weiß nicht
-    type: phrase
-    tags: [common]
-
-  - term: No estoy seguro/a
-    de: Ich bin (mir) nicht sicher
-    type: phrase
-    tags: [common]
-
-  - term: ¡Ni de coña!
-    de: Auf gar keinen Fall!
-    type: phrase
-    tags: [vulgar]
-    note: Stronger than "no way".
-
-  - term: Me parece que…
-    de: Mir scheint, dass… / Ich finde, dass…
-    type: phrase
-    tags: [common]
-    note: Introduces an opinion.
-
-  - term: (A mí) me da igual
-    de: Mir ist das egal
-    type: phrase
-    tags: [common]
 
   - term: Me mola
     de: Ich mag das / Das gefällt mir
     type: phrase
     tags: [common]
+    priority: 2
 
   - term: Me cae bien/mal [alguien]
     de: Ich mag [jemanden] / kann [jemanden] nicht leiden
     type: phrase
     tags: [common]
+    priority: 2
 
   - term: ¡Qué rollo!
     de: Wie langweilig! / So ein Mist! / Nervig!
     type: phrase
     tags: [common]
-
-  - term: Estar de buen/mal humor
-    de: Gut/schlecht gelaunt sein
-    type: phrase
-    tags: [common]
+    priority: 2
 
   - term: Tener ganas de (+ Inf.)
     de: Lust haben auf / Bock haben auf
     type: phrase
     tags: [common]
+    priority: 2
     example:
       term: Tengo ganas de ir a la playa.
       de: Ich habe Lust, an den Strand zu gehen.
@@ -210,175 +320,400 @@ entries:
     de: Na sowas! / Ach was! / Wow!
     type: phrase
     tags: [common]
+    priority: 2
 
   - term: ¡Ostras!
     de: Huch! / Oha! / Verdammt!
     type: phrase
     tags: [common]
-
-  - term: ¿De verdad?
-    de: Wirklich? / Echt jetzt?
-    type: question
-    tags: [common]
+    priority: 2
 
   - term: ¡Qué me dices!
     de: Was du nicht sagst! / Erzähl doch!
     type: phrase
     tags: [common]
+    priority: 2
 
   - term: ¡Menos mal!
     de: Zum Glück! / Gott sei Dank!
     type: phrase
     tags: [common]
+    priority: 2
 
   - term: ¡Fíjate!
     de: Stell dir vor! / Sieh mal!
     type: word
     tags: [common]
+    priority: 2
 
   - term: ¡Es la bomba!
     de: Das ist der Knaller!
     type: phrase
     tags: [common]
+    priority: 2
+
+  - term: Sobre la marcha
+    de: Spontan / Je nachdem, wie es kommt
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Estar de coña / de broma
+    de: Scherzen / Witze machen
+    type: phrase
+    tags: [common]
+    priority: 2
+    example:
+      term: ¿Lo dices en serio o estás de coña?
+      de: Meinst du das ernst oder machst du Witze?
+
+  - term: Tomar el pelo (a alguien)
+    de: Jemanden auf den Arm nehmen
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Tener mala leche
+    de: Miesepetrig / schlecht gelaunt sein
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Pues…
+    de: Also… / Naja… / Tja…
+    type: word
+    tags: [common]
+    priority: 2
+
+  - term: Bueno…
+    de: Naja… / Gut… / Also…
+    type: word
+    tags: [common]
+    priority: 2
+
+  - term: A ver…
+    de: Mal sehen… / Also…
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: O sea…
+    de: Also… / Das heißt… / Ich meine…
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: En plan…
+    de: So nach dem Motto… / So quasi…
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: En fin…
+    de: Na ja, wie auch immer… / Jedenfalls…
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Guay / Genial
+    de: Cool / Geil
+    type: word
+    tags: [common]
+    priority: 2
+
+  - term: ¿Qué tal la cosa?
+    de: Wie geht's denn so?
+    type: question
+    tags: [common]
+    priority: 2
+
+  - term: Tengo un hambre que me muero
+    de: Ich habe einen Riesenhunger
+    literal: Ich habe einen Hunger, dass ich sterbe
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Estoy hecho/a polvo
+    de: Ich bin total fertig / platt
+    literal: Ich bin zu Staub gemacht
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: ¡Me apunto!
+    de: Ich bin dabei!
+    type: phrase
+    tags: [common]
+    priority: 2
+    note: Saying yes to a plan.
+
+  - term: Estoy agobiadísimo/a
+    de: Ich bin total im Stress
+    type: phrase
+    tags: [common]
+    priority: 2
+
+  - term: Estoy currando
+    de: Ich arbeite gerade
+    type: phrase
+    tags: [common]
+    priority: 2
+    note: Currar is slang for trabajar.
+
+  - term: ¿Vamos a tapear?
+    de: Gehen wir Tapas essen?
+    type: question
+    tags: [common]
+    priority: 2
+
+  # ── Priority 3: everyday basics
+
+  - term: ¿Qué pasa?
+    de: Was geht? / Was ist los?
+    type: question
+    tags: [common]
+    priority: 3
+    note: The most casual greeting.
+
+  - term: Totalmente
+    de: Total / Absolut
+    type: word
+    tags: [common]
+    priority: 3
+    note: An emphatic "sí".
+
+  - term: Claro / Claro que sí
+    de: Klar / Na klar / Natürlich
+    type: word
+    tags: [common]
+    priority: 3
+    note: The basic way to agree.
+
+  - term: Desde luego
+    de: Allerdings / Selbstverständlich
+    type: word
+    tags: [common]
+    priority: 3
+    note: Strong agreement, slightly formal.
+
+  - term: Pues no sé
+    de: Tja, ich weiß nicht
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: No estoy seguro/a
+    de: Ich bin (mir) nicht sicher
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: Me parece que…
+    de: Mir scheint, dass… / Ich finde, dass…
+    type: phrase
+    tags: [common]
+    priority: 3
+    note: Introduces an opinion.
+
+  - term: (A mí) me da igual
+    de: Mir ist das egal
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: Estar de buen/mal humor
+    de: Gut/schlecht gelaunt sein
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¿De verdad?
+    de: Wirklich? / Echt jetzt?
+    type: question
+    tags: [common]
+    priority: 3
 
   - term: ¿Te apetece…? (+ Inf./Nomen)
     de: Hast du Lust auf…?
     type: question
     tags: [common]
+    priority: 3
     note: Suggesting something.
 
   - term: ¿Por qué no…?
     de: Warum machen/gehen wir nicht…?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Quedamos para…?
     de: Treffen wir uns für/um…?
     type: question
     tags: [common]
+    priority: 3
 
   - term: Luego te digo (algo)
     de: Ich sag dir später Bescheid
     type: phrase
     tags: [common]
-
-  - term: Sobre la marcha
-    de: Spontan / Je nachdem, wie es kommt
-    type: phrase
-    tags: [common]
-
-  - term: Estar de coña / de broma
-    de: Scherzen / Witze machen
-    type: phrase
-    tags: [common]
-    example:
-      term: ¿Lo dices en serio o estás de coña?
-      de: Meinst du das ernst oder machst du Witze?
-
-  - term: ¡Qué cachondo/a (eres)!
-    de: Du bist (so) ein Witzbold!
-    type: phrase
-    tags: [funny]
-
-  - term: Tomar el pelo (a alguien)
-    de: Jemanden auf den Arm nehmen
-    type: phrase
-    tags: [common]
-
-  - term: Tener mala leche
-    de: Miesepetrig / schlecht gelaunt sein
-    type: phrase
-    tags: [common]
-
-  - term: Pues…
-    de: Also… / Naja… / Tja…
-    type: word
-    tags: [common]
-
-  - term: Bueno…
-    de: Naja… / Gut… / Also…
-    type: word
-    tags: [common]
-
-  - term: A ver…
-    de: Mal sehen… / Also…
-    type: phrase
-    tags: [common]
-
-  - term: O sea…
-    de: Also… / Das heißt… / Ich meine…
-    type: phrase
-    tags: [common]
-
-  - term: En plan…
-    de: So nach dem Motto… / So quasi…
-    type: phrase
-    tags: [common]
-
-  - term: En fin…
-    de: Na ja, wie auch immer… / Jedenfalls…
-    type: phrase
-    tags: [common]
+    priority: 3
 
   - term: Nos vemos
     de: Wir sehen uns
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Hasta luego
     de: Bis später
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Que vaya bien
     de: Mach's gut / Alles Gute
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Cuídate
     de: Pass auf dich auf / Mach's gut
     type: word
     tags: [common]
-
-  - term: Todavía
-    de: Noch
-    type: word
-    tags: [common]
+    priority: 3
 
   - term: Ya
     de: Schon / Jetzt
     type: word
     tags: [common]
+    priority: 3
+
+  - term: ¡Estupendo!
+    de: Toll!
+    type: word
+    tags: [common]
+    priority: 3
+
+  - term: Vamos a tomar algo
+    de: Lass uns was trinken gehen
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¿En serio?
+    de: Wirklich? / Echt?
+    type: question
+    tags: [common]
+    priority: 3
+
+  - term: Por supuesto
+    de: Natürlich / Klar doch
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¡Ni hablar!
+    de: Kommt nicht in Frage!
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¿Cómo que no?
+    de: Was heißt hier nein?
+    type: question
+    tags: [common]
+    priority: 3
+
+  - term: ¡No me digas!
+    de: Sag bloß!
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: Más o menos
+    de: So ungefähr / Mehr oder weniger
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¡Qué lío!
+    de: Was für ein Chaos!
+    type: phrase
+    tags: [funny]
+    priority: 3
+
+  - term: ¡Está buenísimo!
+    de: Das ist mega lecker!
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¡Estás loco/a!
+    de: Du bist verrückt!
+    type: phrase
+    tags: [funny]
+    priority: 3
+
+  - term: ¡Vamos de fiesta!
+    de: Lass uns feiern gehen!
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: ¡Qué sol más bueno!
+    de: Was für tolles Wetter!
+    type: phrase
+    tags: [common]
+    priority: 3
+
+  - term: No tiene ni idea
+    de: Hat keine Ahnung
+    type: phrase
+    tags: [rude]
+    priority: 3
+
+  - term: Todavía
+    de: Noch
+    type: word
+    tags: [common]
+    priority: 3
 
   - term: Entonces
     de: Dann / Also
     type: word
     tags: [common]
+    priority: 3
 
   - term: Quizás / Tal vez
     de: Vielleicht
     type: word
     tags: [common]
+    priority: 3
 
   - term: A veces
     de: Manchmal
     type: word
     tags: [common]
+    priority: 3
 
   - term: A menudo
     de: Oft
     type: word
     tags: [common]
+    priority: 3
 
   - term: Gente
     de: Leute
     type: word
     tags: [common]
+    priority: 3
 
   - term: Cosa
     de: Ding / Sache
     type: word
     tags: [common]
+    priority: 3
     example:
       term: ¿Qué es esa cosa?
       de: Was ist dieses Ding?
@@ -387,377 +722,188 @@ entries:
     de: Wie lange bist du schon hier?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Qué tal tu día?
     de: Wie war dein Tag?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Qué planes tienes para el fin de semana?
     de: Was hast du am Wochenende vor?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Tienes mascotas?
     de: Hast du Haustiere?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Cuál es tu comida favorita?
     de: Was ist dein Lieblingsessen?
     type: question
     tags: [common]
+    priority: 3
 
   - term: ¿Qué haces en tu tiempo libre?
     de: Was machst du in deiner Freizeit?
     type: question
     tags: [common]
-
-  - term: ¡Eso es la leche!
-    de: Das ist der Hammer!
-    type: phrase
-    tags: [funny]
-    note: Amazement or excitement — very Spanish.
-
-  - term: ¡Estupendo!
-    de: Toll!
-    type: word
-    tags: [common]
-
-  - term: ¡Cállate la boca!
-    de: Halt den Mund! / Halt die Fresse!
-    type: phrase
-    tags: [vulgar]
+    priority: 3
 
   - term: ¿Cómo estás?
     de: Wie geht's dir?
     type: question
     tags: [common]
+    priority: 3
 
   - term: Bien, ¿y tú?
     de: Gut, und dir?
     type: phrase
     tags: [common]
+    priority: 3
     note: The standard answer to "¿Cómo estás?".
 
   - term: Muy bien
     de: Sehr gut
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Un poco
     de: Ein bisschen
     type: word
     tags: [common]
+    priority: 3
     note: Softens a statement.
 
   - term: Hoy
     de: Heute
     type: word
     tags: [common]
+    priority: 3
 
   - term: Mañana
     de: Morgen
     type: word
     tags: [common]
+    priority: 3
     note: Also "morning" — "por la mañana".
 
   - term: ¿Puedes…?
     de: Kannst du…?
     type: question
     tags: [common]
+    priority: 3
 
   - term: Tengo que…
     de: Ich muss…
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Estoy cansado/a
     de: Ich bin müde
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Me gusta el deporte
     de: Ich mag Sport
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: ¿Qué estudias?
     de: Was studierst du?
     type: question
     tags: [common]
-
-  - term: Guay / Genial
-    de: Cool / Geil
-    type: word
-    tags: [common]
-
-  - term: ¿Qué tal la cosa?
-    de: Wie geht's denn so?
-    type: question
-    tags: [common]
-
-  - term: Me la trae floja
-    de: Das ist mir Wurst
-    type: phrase
-    tags: [funny, vulgar]
-    note: A crude, funny way to say you don't care.
-
-  - term: Tengo un hambre que me muero
-    de: Ich habe einen Riesenhunger
-    type: phrase
-    tags: [common]
-    literal: Ich habe einen Hunger, dass ich sterbe
-
-  - term: Qué tiempo más de mierda hace hoy
-    de: Das Wetter ist heute scheiße
-    type: sentence
-    tags: [rude]
-
-  - term: Estoy hecho/a polvo
-    de: Ich bin total fertig / platt
-    type: phrase
-    tags: [common]
-    literal: Ich bin zu Staub gemacht
-
-  - term: ¡Qué chorrada!
-    de: Was für ein Quatsch!
-    type: phrase
-    tags: [funny]
-
-  - term: ¡Me apunto!
-    de: Ich bin dabei!
-    type: phrase
-    tags: [common]
-    note: Saying yes to a plan.
-
-  - term: Vamos a tomar algo
-    de: Lass uns was trinken gehen
-    type: phrase
-    tags: [common]
-
-  - term: ¡Qué pasada!
-    de: Das ist der Wahnsinn!
-    type: phrase
-    tags: [funny]
-    note: Always positive.
-
-  - term: No me entero de nada
-    de: Ich verstehe nur Bahnhof
-    type: phrase
-    tags: [funny]
+    priority: 3
 
   - term: Perdón / Lo siento
     de: Entschuldigung / Tut mir leid
     type: phrase
     tags: [common]
+    priority: 3
     note: Perdón also gets someone's attention; lo siento is a real apology.
 
   - term: ¡Muchas gracias!
     de: Vielen Dank!
     type: phrase
     tags: [common]
-
-  - term: Estoy agobiadísimo/a
-    de: Ich bin total im Stress
-    type: phrase
-    tags: [common]
-
-  - term: ¿En serio?
-    de: Wirklich? / Echt?
-    type: question
-    tags: [common]
-
-  - term: Por supuesto
-    de: Natürlich / Klar doch
-    type: phrase
-    tags: [common]
-
-  - term: ¡Ni hablar!
-    de: Kommt nicht in Frage!
-    type: phrase
-    tags: [common]
-
-  - term: ¿Cómo que no?
-    de: Was heißt hier nein?
-    type: question
-    tags: [common]
-
-  - term: ¡Qué fuerte!
-    de: Krass! / Heftig!
-    type: phrase
-    tags: [funny]
-
-  - term: ¡No me digas!
-    de: Sag bloß!
-    type: phrase
-    tags: [common]
+    priority: 3
 
   - term: ¿A qué hora?
     de: Um wie viel Uhr?
     type: question
     tags: [common]
-
-  - term: Más o menos
-    de: So ungefähr / Mehr oder weniger
-    type: phrase
-    tags: [common]
-
-  - term: ¡Qué lío!
-    de: Was für ein Chaos!
-    type: phrase
-    tags: [funny]
-
-  - term: Ya era hora
-    de: Wurde auch Zeit!
-    type: phrase
-    tags: [funny]
+    priority: 3
 
   - term: ¿Tienes wifi?
     de: Hast du WLAN?
     type: question
     tags: [common]
+    priority: 3
 
   - term: Estoy sin batería
     de: Mein Akku ist leer
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: ¿Me mandas el link?
     de: Schickst du mir den Link?
     type: question
     tags: [common]
-
-  - term: Estoy currando
-    de: Ich arbeite gerade
-    type: phrase
-    tags: [common]
-    note: Currar is slang for trabajar.
+    priority: 3
 
   - term: Tengo reunión
     de: Ich hab ein Meeting
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Hace un calor…
     de: Es ist so heiß…
     type: phrase
     tags: [common]
-
-  - term: ¿Vamos a tapear?
-    de: Gehen wir Tapas essen?
-    type: question
-    tags: [common]
-
-  - term: ¡Está buenísimo!
-    de: Das ist mega lecker!
-    type: phrase
-    tags: [common]
-
-  - term: ¡Estás loco/a!
-    de: Du bist verrückt!
-    type: phrase
-    tags: [funny]
-
-  - term: ¡Vamos de fiesta!
-    de: Lass uns feiern gehen!
-    type: phrase
-    tags: [common]
-
-  - term: Estoy de resaca
-    de: Ich hab einen Kater
-    type: phrase
-    tags: [funny]
-
-  - term: ¡Qué marcha!
-    de: Was für eine Party!
-    type: phrase
-    tags: [funny]
-
-  - term: Me piro
-    de: Ich hau ab
-    type: phrase
-    tags: [rude]
-
-  - term: ¡Qué planazo!
-    de: Was für ein geiler Plan!
-    type: phrase
-    tags: [funny]
+    priority: 3
 
   - term: ¡Qué frío!
     de: So kalt!
     type: phrase
     tags: [common]
-
-  - term: Llueve a cántaros
-    de: Es regnet wie aus Eimern
-    type: phrase
-    tags: [funny]
-    literal: Es regnet in Krügen
-
-  - term: ¡Qué sol más bueno!
-    de: Was für tolles Wetter!
-    type: phrase
-    tags: [common]
+    priority: 3
 
   - term: Se está nublando
     de: Es wird bewölkt
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: Estoy lleno/a
     de: Ich bin satt
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: No como carne
     de: Ich esse kein Fleisch
     type: phrase
     tags: [common]
+    priority: 3
 
   - term: ¿Dónde hay un buen bar?
     de: Wo gibt es eine gute Bar?
     type: question
     tags: [common]
+    priority: 3
 
   - term: La cuenta, por favor
     de: Die Rechnung, bitte
     type: phrase
     tags: [common]
-
-  - term: No tiene ni idea
-    de: Hat keine Ahnung
-    type: phrase
-    tags: [rude]
-
-  - term: ¡Qué pesado!
-    de: So nervig!
-    type: phrase
-    tags: [rude]
-    note: For an annoying person or thing.
-
-  - term: ¡Es la polla!
-    de: Das ist der Hammer! / Das ist geil!
-    literal: Das ist der Schwanz
-    type: phrase
-    tags: [vulgar, funny]
-
-  - term: El que se fue a Sevilla, perdió su silla
-    de: Aufgestanden, Platz vergangen
-    literal: Wer nach Sevilla ging, hat seinen Stuhl verloren
-    type: phrase
-    tags: [proverb]
-
-  - term: Cuando el río suena, agua lleva
-    de: Kein Rauch ohne Feuer
-    literal: Wenn der Fluss rauscht, führt er Wasser
-    type: phrase
-    tags: [proverb]
-    note: Every rumour has some truth in it.
-
-  - term: Camarón que se duerme, se lo lleva la corriente
-    de: Wer schläft, verliert
-    literal: Die Garnele, die einschläft, nimmt die Strömung mit
-    type: phrase
-    tags: [proverb]
-    note: Stay alert or you miss your chance.
+    priority: 3
