@@ -754,3 +754,10 @@ entries:
     type: phrase
     tags: [proverb]
     note: Every rumour has some truth in it.
+
+  - term: Camarón que se duerme, se lo lleva la corriente
+    de: Wer schläft, verliert
+    literal: Die Garnele, die einschläft, nimmt die Strömung mit
+    type: phrase
+    tags: [proverb]
+    note: Stay alert or you miss your chance.
