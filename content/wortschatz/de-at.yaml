@@ -37,3 +37,9 @@ entries:
     type: word
     tags: [common]
     priority: 1
+
+  - term: Schiach / Schiech
+    de: Hässlich
+    type: word
+    tags: [common]
+    priority: 1

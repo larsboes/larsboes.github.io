@@ -3,6 +3,8 @@
 	import { PRIORITIES, TYPES, type Entry } from '#lib/wortschatz.ts';
 	import { Progress, MAX_BOX } from '#lib/progress.svelte.ts';
 	import Practice from '#lib/Practice.svelte';
+	import GitHub from '#lib/icons/GitHub.svelte';
+	import { REPO } from '#lib/site.ts';
 
 	let { data } = $props();
 	const deck = $derived(data.deck);
@@ -121,6 +123,10 @@
 			{/each}
 		</ul>
 	{/if}
+
+	<p class="edit muted">
+		<a href="{REPO}/edit/main/content/wortschatz/{deck.code}.yaml"><GitHub /> Fehler gefunden oder Ergänzung? Auf GitHub bearbeiten</a>
+	</p>
 </main>
 
 <style>
@@ -237,6 +243,15 @@
 	}
 	.literal {
 		font-style: italic;
+	}
+	.edit {
+		margin-top: 2.5rem;
+		font-size: 0.85rem;
+	}
+	.edit a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 	}
 	.meta {
 		font-size: 0.78rem;

@@ -3,6 +3,8 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import GitHub from '#lib/icons/GitHub.svelte';
+	import { GITHUB_PROFILE } from '#lib/site.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
@@ -16,6 +18,7 @@
 	<a class="home" href={resolve('/')}>Lars Boes</a>
 	<nav>
 		<a href={resolve('/wortschatz')} aria-current={page.url.pathname.includes('/wortschatz') ? 'page' : undefined}>Wortschatz</a>
+		<a class="icon" href={GITHUB_PROFILE} aria-label="GitHub" title="GitHub"><GitHub /></a>
 	</nav>
 </header>
 
@@ -35,10 +38,20 @@
 		font-weight: 600;
 		text-decoration: none;
 	}
+	nav {
+		display: flex;
+		gap: 1.1rem;
+		align-items: center;
+	}
 	nav a {
 		color: var(--muted);
 		text-decoration: none;
 	}
+	nav .icon {
+		display: flex;
+		font-size: 1.15rem;
+	}
+	nav a:hover,
 	nav a[aria-current='page'] {
 		color: var(--ink);
 	}
